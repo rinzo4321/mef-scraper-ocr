@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entorno Virtual
+venv/
+env/
+ENV/
+.env
+
+# PyInstaller e Instaladores
+build/
+dist/
+*.spec
+*.exe
+
+# Datos y Resultados (Seguridad)
+inputs/
+outputs/
+Certificados/
+Unidades Ejecutoras/
+*.xlsx
+*.txt
+*.png
+
+# Modelos y Entrenamiento (Pesados)
+Models/
+Training/
+debug_output/
+transformed_samples/
+generated_samples/
+
+# Otros
+.vscode/
+.idea/
+.gemini-clipboard/
+*.log

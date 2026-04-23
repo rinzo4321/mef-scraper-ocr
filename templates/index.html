@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEF Scraper Automator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MEF Scraper Automator</h1>
+            <p>Automatización de consulta de certificados</p>
+        </header>
+
+        <main>
+            <div class="form-group">
+                <label for="year">Año de Ejecución:</label>
+                <select id="year" name="year">
+                    <option value="2026">2026</option>
+                    <option value="2025" selected>2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="codes">Códigos de Unidad Ejecutora (Uno por línea):</label>
+                <textarea id="codes" name="codes" rows="5" placeholder="Ejemplo:&#10;472&#10;1316&#10;001"></textarea>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-bottom: 1rem;">
+                <div class="form-group" style="flex: 1;">
+                    <label for="start_cert">Certificado Inicial:</label>
+                    <input type="number" id="start_cert" name="start_cert" value="1" min="1" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="end_cert">Certificado Final:</label>
+                    <input type="number" id="end_cert" name="end_cert" placeholder="Ej: 1000" min="1" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+            </div>
+
+            <button id="btn-start" onclick="startProcess()">Iniciar Proceso</button>
+
+            <div id="status-area" class="hidden">
+                <h3>Estado:</h3>
+                <p id="status-text">Esperando...</p>
+                <div class="loader hidden" id="loader"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Desarrollado con Python & Selenium</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
